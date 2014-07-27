@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<opml version="1.0">
+    <head>
+        <title>bigquery-analytics</title>
+        <ownerName></ownerName>
+    </head>
+    <body>
+        <outline text="bigquery-analytics">
+            <outline text="Understanding Query Execution">
+                <outline text="Colossus">
+                    <outline text="filesystem"></outline>
+                    <outline text="Successor for the GFS"></outline>
+                    <outline text="refinement of GFS">
+                        <outline text="fix a number of scalability problems"></outline>
+                    </outline>
+                    <outline text="distribute filesystem">
+                        <outline text="not physically attached"></outline>
+                        <outline text="distributed across the network"></outline>
+                    </outline>
+                    <outline text="Chunk server">
+                        <outline text="contain the disks and server"></outline>
+                    </outline>
+                    <outline text="large data">
+                        <outline text="split into small data">
+                            <outline text="stored on different physical disks"></outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="ColumnIO">
+                    <outline text="storage format that easy to query"></outline>
+                    <outline text="column-order">
+                        <outline text="faster than row-order">
+                            <outline text="selectivity">
+                                <outline text="read the need column"></outline>
+                            </outline>
+                            <outline text="compression">
+                                <outline text="read compress data"></outline>
+                                <outline text="unpack"></outline>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Putting it Together"></outline>
+            <outline text="Understanding the BigQuery ObjectModel"></outline>
+            <outline text="Running Data"></outline>
+            <outline text="Managing Data stored in BigQuery"></outline>
+            <outline text="The Story of Big Data at Google">
+                <outline text="Scale-up approach">
+                    <outline text="Google">
+                        <outline text="Scale out(not scale up)"></outline>
+                    </outline>
+                    <outline text="他社">
+                        <outline text="Scaled-up machines are expensive"></outline>
+                        <outline text="Scaled-up machines are single points of failure"></outline>
+                        <outline text="Scale up has limits"></outline>
+                        <outline text="Scale up doesn’t protect you against software failures"></outline>
+                    </outline>
+                </outline>
+                <outline text="Big Data Stack 1.0">
+                    <outline text="Between 2000 - 2004"></outline>
+                    <outline text="Anything can fail">
+                        <outline text="write your software expecting unreliable hardware"></outline>
+                    </outline>
+                    <outline text="Use only commodity">
+                        <outline text="don’t get locked in"></outline>
+                        <outline text="can always find replacements"></outline>
+                    </outline>
+                    <outline text="Software must be bult to scale out">
+                        <outline text="limitation">
+                            <outline text="difficult to JOIN operation">
+                                <outline text="join data lives on different machines"></outline>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Inspired the Big Data revolution">
+                        <outline text="Google File System(GFS)">
+                            <outline text="data is stored in multiple locations">
+                                <outline text="any disk can fail"></outline>
+                            </outline>
+                            <outline text="HDFS"></outline>
+                        </outline>
+                        <outline text="MapReduce">
+                            <outline text="divides"></outline>
+                            <outline text="parallelize"></outline>
+                            <outline text="orchestrates"></outline>
+                            <outline text="Hadoop"></outline>
+                        </outline>
+                        <outline text="Bigtable">
+                            <outline text="forerunner of NoSQL database"></outline>
+                            <outline text="scale out to multiple servers"></outline>
+                            <outline text="replicated">
+                                <outline text="tablet server failure doesn’t cause data lose"></outline>
+                            </outline>
+                            <outline text="HBase"></outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Big Data Stack 2.0(and Beyond)">
+                    <outline text="Problem of GFS,MapReduce,Bigtable">
+                        <outline text="MapReduce is hard"></outline>
+                        <outline text="MapReduce can be slow">
+                            <outline text="wait minutes or hours"></outline>
+                            <outline text="write C++ or Java code each time you change question"></outline>
+                        </outline>
+                        <outline text="GFS suffer from reduces availability">
+                            <outline text="metadata server is a single point of failure"></outline>
+                        </outline>
+                        <outline text="Bigtable replication between data centers is only eventually consistency"></outline>
+                        <outline text="Programmers has a really difficult time dealing with eventual consistency"></outline>
+                    </outline>
+                    <outline text="Colossus">
+                        <outline text="paperが公開されてない"></outline>
+                    </outline>
+                    <outline text="Megastore">
+                        <outline text="geographically replicated"></outline>
+                        <outline text="uses Paxos algorigthm">
+                            <outline text="to ensure consistent reads and writes"></outline>
+                            <outline text="immediately reflected"></outline>
+                        </outline>
+                    </outline>
+                    <outline text="Spanner"></outline>
+                    <outline text="FlumeJava"></outline>
+                    <outline text="Dremel">
+                        <outline text="a distributed SQL query search engine"></outline>
+                    </outline>
+                    <outline text="Megastore is built on top of Bigtable(any any others)"></outline>
+                </outline>
+                <outline text="What is Big Data?">
+                    <outline text="more data than you want to process"></outline>
+                </outline>
+                <outline text="Why Big Data?">
+                    <outline text="can easily acquire Big Data"></outline>
+                    <outline text="Over time"></outline>
+                    <outline text="Viral scaling">
+                        <outline text="more and more user you get"></outline>
+                    </outline>
+                    <outline text="Projected growth"></outline>
+                    <outline text="Architectural limitations"></outline>
+                </outline>
+                <outline text="How Can You Read a Terabyte in Second?">
+                    <outline text="Skip a lot of data"></outline>
+                    <outline text="Buy some really expensive hardware"></outline>
+                    <outline text="Run in parallel">
+                        <outline text="BigQuery"></outline>
+                        <outline text="and most Big Data tools"></outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="BigQuery Fundamentals">
+                <outline text="What is BigQuery?">
+                    <outline text="Launched in Google I/O 2012"></outline>
+                    <outline text="Made for resolve problem">
+                        <outline text="hard to keeping up with growth of their data"></outline>
+                    </outline>
+                    <outline text="Googleはデータ駆動会社">
+                        <outline text="データに裏打ちされてない提案は通らない"></outline>
+                    </outline>
+                </outline>
+                <outline text="SQL Queries over Big Data"></outline>
+                <outline text="BigQuery SQL"></outline>
+                <outline text="Haw Fast Is BigQuery?"></outline>
+            </outline>
+            <outline text="Advanced Queries"></outline>
+        </outline>
+    </body>
+</opml>
