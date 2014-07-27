@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<opml version="1.0">
+    <head>
+        <title>BigQuery</title>
+        <ownerName></ownerName>
+    </head>
+    <body>
+        <outline text="BigQuery">
+            <outline text="Managing data">
+                <outline text="Listing projects, jobs, tables and datasets"></outline>
+                <outline text="Getting information about jobs, tables and datasets"></outline>
+                <outline text="Updating or patching tables and datasets"></outline>
+                <outline text="Deleting tables and datasets"></outline>
+            </outline>
+            <outline text="Jobs">
+                <outline text="actions">
+                    <outline text="load data"></outline>
+                    <outline text="export data"></outline>
+                    <outline text="query data"></outline>
+                    <outline text="copy data"></outline>
+                </outline>
+                <outline text="you construct"></outline>
+                <outline text="BigQuery executes"></outline>
+                <outline text="run asynchronously"></outline>
+                <outline text="polling their status"></outline>
+                <outline text="history on Developer Console"></outline>
+            </outline>
+            <outline text="Datasets">
+                <outline text="contain tables"></outline>
+                <outline text="control access to tables">
+                    <outline text="per-datasets"></outline>
+                </outline>
+                <outline text="create dataset before loading data"></outline>
+            </outline>
+            <outline text="Loading data">
+                <outline text="Data formats">
+                    <outline text="CSV"></outline>
+                    <outline text="JSON(newline-delimited)"></outline>
+                </outline>
+            </outline>
+            <outline text="Projects">
+                <outline text="Billing">
+                    <outline text="per-project"></outline>
+                </outline>
+                <outline text="Authorized users"></outline>
+                <outline text="BigQuery data"></outline>
+                <outline text="friendly name"></outline>
+                <outline text="unique ID"></outline>
+            </outline>
+            <outline text="Tables">
+                <outline text="create by">
+                    <outline text="Loading data into a new table"></outline>
+                    <outline text="Running a query"></outline>
+                    <outline text="Copying a table"></outline>
+                </outline>
+                <outline text="contain">
+                    <outline text="your data">
+                        <outline text="with table schema">
+                            <outline text="field names"></outline>
+                            <outline text="types"></outline>
+                            <outline text="other information"></outline>
+                        </outline>
+                    </outline>
+                    <outline text="views">
+                        <outline text="virtual tables defined by a SQL query"></outline>
+                        <outline text="nested view">
+                            <outline text="If there are more than four levels, INVALID_INPUT error occurs"></outline>
+                        </outline>
+                        <outline text="Querying view">
+                            <outline text="requires READER role for all datasets the contain table in the view chain"></outline>
+                        </outline>
+                        <outline text="tool">
+                            <outline text="bq mk —view=“&lt;query>” mydataset.myview"></outline>
+                            <outline text="create view using browser-tool"></outline>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Querying data">
+                <outline text="synchronous">
+                    <outline text="biqquery.jobs.query()"></outline>
+                    <outline text="results saved into temporary table"></outline>
+                </outline>
+                <outline text="asynchronous">
+                    <outline text="bigquery.jobs.insert()">
+                        <outline text="1. bigquery.jobs.insert()"></outline>
+                        <outline text="2. biggquery.jobs.get()"></outline>
+                        <outline text="3. browse through the table data"></outline>
+                        <outline text="Alternative 2 and 3, bigquery.jobs.getQueryResults() with no timeout"></outline>
+                    </outline>
+                    <outline text="results saved into persistent or temporary table"></outline>
+                </outline>
+                <outline text="a full column scan"></outline>
+                <outline text="table decorators">
+                    <outline text="more cost-effective query of a subset of your data"></outline>
+                    <outline text="can be used whenever a table is read">
+                        <outline text="copying a table"></outline>
+                        <outline text="exporting a table"></outline>
+                        <outline text="listing data using tabledata.list()"></outline>
+                    </outline>
+                    <outline text="relative &lt;time> values"></outline>
+                    <outline text="absolute &lt;time> values"></outline>
+                    <outline text="restricted to data inserted within the last 24 hours"></outline>
+                </outline>
+                <outline text="limit">
+                    <outline text="maximum tables per query: 1000"></outline>
+                    <outline text="maximum query length: 256KB"></outline>
+                </outline>
+                <outline text="query results saved to">
+                    <outline text="persistent table">
+                        <outline text="new or existing table in any dataset in which you have WRITE privileges"></outline>
+                    </outline>
+                    <outline text="temporary table">
+                        <outline text="24 hours lifetime"></outline>
+                        <outline text="not visible using list or manipulation methods"></outline>
+                        <outline text="not available for sharing"></outline>
+                        <outline text="saved in special datasets"></outline>
+                    </outline>
+                </outline>
+                <outline text="interactive query">
+                    <outline text="the query is executed as soon as possible"></outline>
+                    <outline text="count towards your concurrent rate limit and your daily rate limit"></outline>
+                </outline>
+                <outline text="batch query">
+                    <outline text="queues each batch query"></outline>
+                    <outline text="If not start 3 hours, job goes to interactive priority"></outline>
+                    <outline text="does not count toward you concurrent rate limit"></outline>
+                </outline>
+            </outline>
+            <outline text="Exporting data"></outline>
+        </outline>
+    </body>
+</opml>
